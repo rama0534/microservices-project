@@ -1,0 +1,38 @@
+<ng-template #deleteModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">{{ title }}</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="onCancel(modal)"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <p>{{ message }}</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        (click)="onCancel(modal)"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="onConfirm(modal)"
+      >
+        Delete
+      </button>
+    </div>
+  </ng-template>
+  
+  <button
+    class="btn btn-outline-danger"
+    (click)="open(deleteModal)"
+  >
+    Delete
+  </button>
+  

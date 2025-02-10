@@ -1,0 +1,23 @@
+<div class="faq-container">
+  <h2>{{ title }}</h2>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+
+  <div class="faq-layout" *ngIf="!errorMessage ">
+    
+    <div class="faq-list">
+      <div 
+        *ngFor="let faq of faqs; let i = index" 
+        class="faq-item" 
+        (click)="selectQuestion(faq)" 
+        [class.active]="faq === selectedFaq">
+        {{i + 1}}. {{ faq.question }}
+      </div>
+    </div>
+
+   
+    <div class="faq-answer-box" *ngIf="selectedFaq">
+      <h3>{{ selectedFaq.question }}</h3>
+      <p>{{ selectedFaq.answer }}</p>
+    </div>
+  </div>
+</div>

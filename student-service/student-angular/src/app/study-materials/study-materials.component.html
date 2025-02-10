@@ -1,0 +1,22 @@
+<div class="tabs">
+    <div
+      class="tab-button"
+      [class.active]="activeTab === 'Java'"
+      (click)="selectTab('Java Dev Questions', 'JDQ.pdf', 'Java')"
+    >
+      Java FAQs
+    </div>
+    <button
+      class="tab-button"
+      [class.active]="activeTab === 'Hibernate'"
+      (click)="selectTab('Hibernate Questions', 'HibernateQues.pdf', 'Hibernate')"
+    >
+      Hibernate FAQs
+    </button>
+  </div>
+   
+
+  <faq [title]="title" [faqs]="faqs" *ngIf="isActive" [errorMessage]="errorMessage"></faq>
+  
+
+ 

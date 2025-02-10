@@ -1,0 +1,104 @@
+/* Modal Header */
+.modal-header {
+    background: #dc3545; /* Red background for warning */
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Close Button */
+  .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .btn-close:hover {
+    opacity: 0.8;
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Modal Footer */
+  .modal-footer {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    background: #f8f9fa;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  /* Cancel Button */
+  .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+    transition: 0.3s;
+  }
+  
+  .btn-outline-secondary:hover {
+    background: #6c757d;
+    color: white;
+  }
+  
+  /* Delete Button */
+  .btn-danger {
+    background: #dc3545;
+    border-color: #dc3545;
+    transition: 0.3s;
+  }
+  
+  .btn-danger:hover {
+    background: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Delete Button (Outside Modal) */
+  .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: 0.3s;
+    padding: 8px 12px;
+    font-weight: bold;
+  }
+  
+  .btn-outline-danger:hover {
+    background: #dc3545;
+    color: white;
+  }
+  
+  /* Responsive: Adjust for smaller screens */
+  @media (max-width: 600px) {
+    .modal-body {
+      font-size: 14px;
+    }
+  
+    .modal-footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .modal-footer button {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+  

@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  student-service:
+    build: ../student-service
+#    image: student-service:0.1
+    container_name: student-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+    networks:
+      - microservice-network
+    depends_on: 
+      - postgres
+ 
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_MULTIPLE_DATABASES: postgres 
+    ports:
+      - "5432:5432"
+    networks:
+      - microservice-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/main/resources/db/students.sql:/docker-entrypoint-initdb.d/init.sql
+    
+networks:
+  microservice-network:
+
+volumes:
+  postgres_data:

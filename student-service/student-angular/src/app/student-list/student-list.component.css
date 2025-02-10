@@ -1,0 +1,254 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    color: #0056b3;
+    margin-top: 20px;
+  }
+ 
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .grade-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .grade-buttons button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    margin: 5px;
+  }
+  
+  .students-list {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li:last-child {
+    border-bottom: none;
+  }
+  
+  .grade-label {
+    font-weight: bold;
+    color: #ff6600;
+  }
+  
+  /* General Styles */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Styles */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: center; 
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+   
+  /* Button Styles */
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-outline-secondary {
+    background-color: white;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  /* Spinner */
+  .spinner-border {
+    display: block;
+    margin: 20px auto;
+  }
+  
+  /* Error Message */
+  .alert-danger {
+    padding: 10px;
+    margin: 15px 0;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+  }
+  
+  /* Grade Section */
+  .grade-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .grade-buttons button {
+    min-width: 120px;
+  }
+  
+  .students-list {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .students-list h3 {
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .grade-label {
+    font-weight: bold;
+    color: #ff6600;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  li span {
+    flex: 1;   
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+   
+  li span:first-child {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+   
+  li span:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .no-data-row {
+    height: 80px;
+  }
+  
+  .no-data-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+    text-align: center;
+    padding: 20px;
+  }
+  
+   
+  @media (max-width: 600px) {
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    li span {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+  
+   
+  

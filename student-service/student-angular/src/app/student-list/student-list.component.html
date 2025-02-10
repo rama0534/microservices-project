@@ -1,0 +1,78 @@
+<save-update-modal 
+          [title]="'New Student'"  
+          (save)="saveStudent($event)"> Student
+</save-update-modal> 
+<div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<div class="container">
+  <h2>  Enrolled Students List  </h2> 
+  <ng-container *ngIf="students.length > 0; else noStudents"> 
+  <table class="table table-striped custom-table">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Score</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Update</th> 
+        <th scope="col">Delete</th> 
+      </tr>
+    </thead>
+    <tbody >  
+      <tr *ngFor="let student of students; let i = index;" > 
+        <td> {{ student.id }} </td>
+        <td> {{ student.name }} </td>
+        <td>{{ student.score}} </td>
+        <td>{{ student.grade}}</td>
+        <td> 
+          <save-update-modal
+          [title]="'Update Student'"
+          [editableObject]="student"
+          (save)="updateStudent($event)">>
+          </save-update-modal> 
+        </td>
+        <td>  
+          <delete-modal  
+            [title]="'Confirm Delete'"
+            [message]="'Are you sure you want to delete student ' + student.name + '?'"
+            (confirm)="deleteStudent(student.id)">
+          </delete-modal> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+  <ng-template #noStudents>
+    <div class="no-data-message">
+      No students found. Please add some students.
+    </div>
+  </ng-template>
+</div>
+
+<div class="container">
+  <h2>Students Grouped by Grade</h2>
+
+  <div class="grade-buttons">
+    <button *ngFor="let grade of (groupedStudents | keyvalue)" (click)="loadStudentsByGrade(grade.key)">
+      Grade {{ grade.key }} ({{ grade.value.length }} students)
+    </button>
+  </div>
+
+  <div *ngIf="selectedGrade" class="students-list">
+    <h3>Students in <span class="grade-label">Grade {{ selectedGrade }}</span></h3>
+    <ul> 
+      <li *ngFor="let student of studentsByGrade">
+        <span>{{ student.name }}</span>
+        <span>Score: {{ student.score }}</span> 
+        <span>ID: {{ student.id }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
