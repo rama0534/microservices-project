@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Students Grouped by Grade</h2>
+  
+    <div class="grade-buttons">
+      <button *ngFor="let grade of (groupedStudents | keyvalue)" (click)="loadStudentsByGrade(grade.key)">
+        Grade {{ grade.key }} ({{ grade.value.length }} students)
+      </button>
+    </div>
+  
+    <div *ngIf="selectedGrade" class="students-list">
+      <h3>Students in <span class="grade-label">Grade {{ selectedGrade }}</span></h3>
+      <ul> 
+        <li *ngFor="let student of studentsByGrade">
+          <span>{{ student.name }}</span>
+          <span>Score: {{ student.score }}</span> 
+          <span>ID: {{ student.id }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>

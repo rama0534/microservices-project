@@ -16,6 +16,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FaqComponent } from './faq/faq.component';
 import { StudyMaterialsComponent } from './study-materials/study-materials.component';
+import { StudentsComponent } from './students/students.component';
+import { GroupByGradeComponent } from './group-by-grade/group-by-grade.component';
  
 
 
@@ -24,7 +26,7 @@ import { StudyMaterialsComponent } from './study-materials/study-materials.compo
     AppComponent,
     StudentListComponent, 
     HomeComponent,   
-    SaveUpdateModalComponent, DeleteModalComponent, NavBarComponent, FaqComponent, StudyMaterialsComponent
+    SaveUpdateModalComponent, DeleteModalComponent, NavBarComponent, FaqComponent, StudyMaterialsComponent, StudentsComponent, GroupByGradeComponent
   ],
   imports: [
     BrowserModule,

@@ -2,43 +2,6 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css"; 
 body { padding: 20px;}
 div { padding: 10px;}
-/* Center the table and restrict its width */
-.table-container {
-  max-width: 90%; /* Set the maximum width of the table */
-  margin: 20px auto; /* Center horizontally and add some vertical space */
-  padding: 10px; /* Add padding around the table container */
-  background-color: #f8f9fa; /* Light background for contrast */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Style the table for better readability */
-.table {
-  width: 100%; /* Ensure the table spans the container */
-  border-collapse: collapse; /* Avoid double borders */
-}
-
-.table th,
-.table td {
-  padding: 10px; /* Space inside cells */
-  text-align: center; /* Center-align text */
-  vertical-align: middle; /* Vertically align text */
-}
-
-.table thead th {
-  background-color: #343a40; /* Dark header background */
-  color: #fff; /* White text in header */
-}
-
-.table tbody tr:nth-child(odd) {
-  background-color: #f1f1f1; /* Alternate row background for clarity */
-}
-
-.table tbody tr:hover {
-  background-color: #e9ecef; /* Highlight row on hover */
-}
-
-/* Buttons alignment */
 button {
-  margin: 0 5px; /* Space between buttons */
-}
+    margin: 0 5px; /* Space between buttons */
+  }

@@ -1,0 +1,143 @@
+ .container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+   /* Grade Section */
+   .grade-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .grade-buttons button {
+    min-width: 120px;
+  }
+
+  .grade-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .grade-buttons button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    margin: 5px;
+  }
+
+  .grade-label {
+    font-weight: bold;
+    color: #ff6600;
+  }
+
+  .students-list {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .students-list h3 {
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  
+  h3 {
+    color: #0056b3;
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+ 
+  
+  button:focus {
+    outline: none;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+    
+  .grade-label {
+    font-weight: bold;
+    color: #ff6600;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  li span {
+    flex: 1;   
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+   
+  li span:first-child {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+   
+  li span:not(:last-child) {
+    margin-right: 10px;
+  }
+ 
+   
+  @media (max-width: 600px) {
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    li span {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+  
+   
+  

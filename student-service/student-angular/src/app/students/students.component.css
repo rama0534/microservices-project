@@ -1,0 +1,137 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  justify-content: center; 
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+  
+
+   
+
+/* Error Message */
+.alert-danger {
+  padding: 10px;
+  margin: 15px 0;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+/* Grade Section */
+.grade-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.grade-buttons button {
+  min-width: 120px;
+}
+
+.students-list {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.students-list h3 {
+  color: #007bff;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.grade-label {
+  font-weight: bold;
+  color: #ff6600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li span {
+  flex: 1;   
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+ 
+li span:first-child {
+  font-weight: bold;
+  color: #007bff;
+}
+
+ 
+li span:not(:last-child) {
+  margin-right: 10px;
+}
+
+.no-data-row {
+  height: 80px;
+}
+
+.no-data-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff0000;
+  text-align: center;
+  padding: 20px;
+}
+
+
+ 
+@media (max-width: 600px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  li span {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+}
+
+ 

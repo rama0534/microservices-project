@@ -1,0 +1,30 @@
+ 
+<div class="tabs">
+  <save-update-modal 
+    [title]="'New Student'"  
+    (save)="saveStudent($event)"> Student
+  </save-update-modal> 
+</div>
+
+<div class="tabs">
+    <div
+      class="tab-button"
+      [class.active]="activeTab === 'Students List'"
+      (click)="selectTab('Students List')"
+    >
+    Students List
+    </div>
+    <button
+      class="tab-button"
+      [class.active]="activeTab === 'Group By Grade'"
+      (click)="selectTab('Group By Grade')"
+    >
+    Group By ID
+    </button>
+</div>
+  
+<student-list *ngIf="activeTab === 'Students List'"></student-list>
+<group-by-grade *ngIf="activeTab === 'Group By Grade'"></group-by-grade>
+ 
+
+ 
