@@ -8,21 +8,22 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class StudentService {
+
   private apiUrl = environment.API_URL;
-  private studentsSubject = new BehaviorSubject<Student[]>([]);
-  students$ = this.studentsSubject.asObservable();
+  private students = new BehaviorSubject<Student[]>([]);
+  students$ = this.students.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  getStudents(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}`);
+  getStudents(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.apiUrl}`);
   }
 
   getStudentById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  addStudent(student: any): Observable<any> {
+  addStudent(student: Student): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}`, student);
   }
 
@@ -37,11 +38,7 @@ export class StudentService {
   getGroupedByGrade(): Observable<Map<Grade, Student[]>> {
     return this.http.get<Map<Grade, Student[]>>(`${this.apiUrl}/grouped-by-grade`);
   }
-
-  // getStudentsByGrade(grade: Grade): Observable<Map<Grade, Student[]>> {
-  //   const params = new HttpParams().set('grade', grade);
-  //   return this.http.get<Map<Grade, Student[]>>(`${this.apiUrl}/grades`, { params });
-  // }
+ 
   
   // Get students grouped by grade
   getStudentsGroupedByGrade(): Observable<{ [key: string]: Student[] }> {

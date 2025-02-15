@@ -23,8 +23,8 @@
     </button>
 </div>
   
-<student-list *ngIf="activeTab === 'Students List'"></student-list>
-<group-by-grade *ngIf="activeTab === 'Group By Grade'"></group-by-grade>
+<student-list *ngIf="activeTab === 'Students List'" [students]="students"></student-list>
+<group-by-grade *ngIf="activeTab === 'Group By Grade'" [groupedStudents]="groupedStudents"></group-by-grade>
  
 
  

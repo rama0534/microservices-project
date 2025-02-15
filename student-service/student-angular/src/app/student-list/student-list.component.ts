@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StudentService } from '../services/student.service'; 
 import { Student } from '../models/student.model'; 
 
@@ -7,23 +7,14 @@ import { Student } from '../models/student.model';
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
-export class StudentListComponent implements OnInit {
-  students: Student[] = [];
-  selectedStudent: any = {};
-  groupedStudents: { [key: string]: Student[] } = {};
-  selectedGrade: string = '';
-  studentsByGrade: Student[] = [];
+export class StudentListComponent {
+  @Input() students: Student[] = []; 
 
   constructor(private studentService: StudentService) {}; 
 
   isLoading = false;
   errorMessage = '';
 
-
-  ngOnInit(): void {
-    this.fetchStudents();
-    this.loadGroupedStudents();
-  }
 
   fetchStudents(): void {
     this.studentService.getStudents().subscribe({
@@ -52,48 +43,14 @@ export class StudentListComponent implements OnInit {
   }
  
 
-  saveStudent(updatedStudent: any): void { 
-      this.studentService.addStudent(updatedStudent).subscribe({
-        next: () => {
-          alert('Student added successfully');
-          this.fetchStudents();
-          this.selectedStudent = {};
-        },
-        error: (err) => console.error('Error adding student', err),
-      });
-  } 
-
   updateStudent(updatedStudent: any) { 
     this.studentService.updateStudent(updatedStudent.id, updatedStudent).subscribe({
       next: () => {
         alert('Student updated successfully');
-        this.fetchStudents();
-        this.selectedStudent = {}; 
+        this.fetchStudents(); 
       },
       error: (err) => console.error('Error updating student', err),
     });
   }
 
-  loadGroupedStudents(): void {
-    this.studentService.getStudentsGroupedByGrade().subscribe({
-      next: (data) => {
-        this.groupedStudents = data; 
-      },
-      error: (err) => {
-        console.error('Error fetching grouped students:', err);
-      }
-    });
-  }
-
-  loadStudentsByGrade(grade: string): void {
-    this.selectedGrade = grade;
-    this.studentService.getStudentsByGrade(grade).subscribe({
-      next: (data) => {
-        this.studentsByGrade = data[grade] || [];
-      },
-      error: (err) => {
-        console.error(`Error fetching students for grade ${grade}:`, err);
-      }
-    });
-  }
 }
