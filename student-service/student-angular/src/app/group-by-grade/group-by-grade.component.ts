@@ -11,14 +11,14 @@ export class GroupByGradeComponent {
      
     @Input() groupedStudents: { [key: string]: Student[] } = {};
     @Input() data: string | undefined;
+    @Input() errorMessage: string = '';
  
     selectedGrade: string = '';
     studentsByGrade: Student[] = [];
   
     constructor(private studentService: StudentService) {}; 
   
-    isLoading = false;
-    errorMessage = '';
+    isLoading = false; 
   
   
     loadStudentsByGrade(grade: string): void {

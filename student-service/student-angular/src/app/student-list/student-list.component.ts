@@ -9,11 +9,12 @@ import { Student } from '../models/student.model';
 })
 export class StudentListComponent {
   @Input() students: Student[] = []; 
+  @Input() errorMessage = '';
 
   constructor(private studentService: StudentService) {}; 
 
   isLoading = false;
-  errorMessage = '';
+  
 
 
   fetchStudents(): void {

@@ -1,6 +1,6 @@
 <div class="container">
-    <h2>Students Grouped by Grade</h2>
-  
+  <ng-container *ngIf="errorMessage === ''; else noStudents">
+    <h2>Students Grouped by Grade</h2> 
     <div class="grade-buttons">
       <button *ngFor="let grade of (groupedStudents | keyvalue)" (click)="loadStudentsByGrade(grade.key)">
         Grade {{ grade.key }} ({{ grade.value.length }} students)
@@ -17,4 +17,10 @@
         </li>
       </ul>
     </div>
+  </ng-container>
+  <ng-template #noStudents>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  </ng-template>
   </div>

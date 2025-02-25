@@ -48,6 +48,7 @@ export class StudentsComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error fetching grouped students:', err);
+        this.errorMessage = 'Failed to load students. Please try again later.';
       }
     });
   }
@@ -57,6 +58,10 @@ export class StudentsComponent implements OnInit {
     tab == 'Students List' ?  this.fetchStudents() : this.loadGroupedStudents(); 
   }
 
+  reset() {
+    this.activeTab = '';
+   }
+
    saveStudent(updatedStudent: any): void { 
        this.studentService.addStudent(updatedStudent).subscribe({
          next: () => {
@@ -65,8 +70,12 @@ export class StudentsComponent implements OnInit {
            this.loadGroupedStudents();
            console.log("this stu", this.students)
          },
-         error: (err) => console.error('Error adding student', err),
+         error: (err) => {
+          console.error('Error adding student', err),
+          this.errorMessage = err;
+         } 
        });
+       console.log("activetan", this.activeTab);
    } 
  
 }

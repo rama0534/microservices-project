@@ -2,7 +2,9 @@
 <div class="tabs">
   <save-update-modal 
     [title]="'New Student'"  
-    (save)="saveStudent($event)"> Student
+    (save)="saveStudent($event)"
+    (click)="reset()"> Student
+   
   </save-update-modal> 
 </div>
 
@@ -23,8 +25,8 @@
     </button>
 </div>
   
-<student-list *ngIf="activeTab === 'Students List'" [students]="students"></student-list>
-<group-by-grade *ngIf="activeTab === 'Group By Grade'" [groupedStudents]="groupedStudents"></group-by-grade>
+<student-list *ngIf="activeTab === 'Students List'" [students]="students" [errorMessage]="errorMessage"></student-list>
+<group-by-grade *ngIf="activeTab === 'Group By Grade'" [groupedStudents]="groupedStudents" [errorMessage]="errorMessage"></group-by-grade>
  
 
  

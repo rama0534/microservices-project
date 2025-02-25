@@ -5,7 +5,7 @@
   {{ errorMessage }}
 </div>
 
-<div class="container">
+<div class="container" *ngIf="errorMessage === ''">
   <h2>  Enrolled Students List  </h2> 
   <ng-container *ngIf="students.length > 0; else noStudents"> 
   <table class="table table-striped custom-table">
