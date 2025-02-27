@@ -17,7 +17,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FaqComponent } from './faq/faq.component';
 import { StudyMaterialsComponent } from './study-materials/study-materials.component';
 import { StudentsComponent } from './students/students.component';
-import { GroupByGradeComponent } from './group-by-grade/group-by-grade.component';
+import { GroupByGradeComponent } from './group-by-grade/group-by-grade.component'; 
+import { CodingEditorComponent } from './coding-editor/coding-editor.component';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
  
 
 
@@ -26,7 +28,7 @@ import { GroupByGradeComponent } from './group-by-grade/group-by-grade.component
     AppComponent,
     StudentListComponent, 
     HomeComponent,   
-    SaveUpdateModalComponent, DeleteModalComponent, NavBarComponent, FaqComponent, StudyMaterialsComponent, StudentsComponent, GroupByGradeComponent
+    SaveUpdateModalComponent, DeleteModalComponent, NavBarComponent, FaqComponent, StudyMaterialsComponent, StudentsComponent, GroupByGradeComponent, CodingEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { GroupByGradeComponent } from './group-by-grade/group-by-grade.component
     FormsModule,
     NgbModule,
     NgbDropdownModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    MonacoEditorModule.forRoot() 
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }

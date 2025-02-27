@@ -1,0 +1,31 @@
+ <ng-container *ngIf="snippets.length > 0; else noSnippets">
+  <div class="faq-container">
+    <div class="faq-layout">
+      <div class="faq-list">
+        <button class="btn btn-primary" (click)="clear()">Clear</button>
+        <div
+          *ngFor="let snippet of snippets; let i = index"
+          class="faq-item"
+          (click)="selectSnippet(snippet)"
+          [class.active]="snippet === currentSnippet"
+        >
+          {{ i + 1 }}. {{ snippet.title }}
+        </div>
+      </div>
+
+      <div class="faq-answer-box" *ngIf="showEditor">
+        <ngx-monaco-editor
+          [options]="editorOptions"
+          [ngModel]="currentSnippet?.code"
+          style="height: calc(70vh - 50px); width: 100%"
+        >
+        </ngx-monaco-editor>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noSnippets>
+  <div class="no-data-message">
+    No FAQ's found. Please add some FAQ's.
+  </div>
+</ng-template>
